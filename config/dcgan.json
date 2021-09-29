@@ -1,0 +1,18 @@
+{
+  "global": {
+    "train_data_file_path": "data\\mnist",
+    "log_path": "log\\dcgan.log"
+
+  },
+  "model": {
+    "sample_dir": "log\\dcgan\\",
+    "epoches": 10000,
+    "batch_size": 32,
+    "figure_size": 28,
+    "channel": 1,
+    "z_dim": 100,
+    "learning_rate": 0.0001,
+    "generator_input_size": 2,
+    "discriminator_output_filters_num": 64
+  }
+}
