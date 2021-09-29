@@ -11,8 +11,11 @@
     "figure_size": 28,
     "channel": 1,
     "z_dim": 100,
-    "learning_rate": 0.0001,
+
     "generator_input_size": 2,
-    "discriminator_output_filters_num": 64
+    "discriminator_output_filters_num": 64,
+    "learning_rate_discriminator": 0.0001,
+    "learning_rate_generator": 0.0001
+
   }
 }

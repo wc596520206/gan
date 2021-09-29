@@ -15,6 +15,11 @@ class Train(object):
         self.batch_size = config["model"]["batch_size"]
         self.z_dim = config["model"]["z_dim"]
         self.sample_dir = config["model"]["sample_dir"]
+        self.learning_rate_generator = config["model"]["learning_rate_generator"]
+        self.learning_rate_discriminator = config["model"]["learning_rate_discriminator"]
+
+
+
         self.processData = processData
 
     def build_model(self, dcgan):
@@ -25,8 +30,8 @@ class Train(object):
         self.d_loss = dcgan.d_loss(self.d_real, self.d_fake)
         self.g_loss = dcgan.g_loss(self.d_fake)
 
-        self.d_solver = dcgan.solver(self.d_loss, self.d_vars, 2e-4)
-        self.g_solver = dcgan.solver(self.g_loss, self.g_vars, 2e-4)
+        self.d_solver = dcgan.solver(self.d_loss, self.d_vars, self.learning_rate_discriminator)
+        self.g_solver = dcgan.solver(self.g_loss, self.g_vars,self.learning_rate_generator)
         self.saver = tf.train.Saver()
         self.sess = tf.Session()
         pass

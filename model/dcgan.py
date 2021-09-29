@@ -15,7 +15,7 @@ class DcGan(object):
         self.channel = config["model"]["channel"]
         self.z_dim = config["model"]["z_dim"]
 
-        self.learning_rate = config["model"]["learning_rate"]
+
         self.generator_input_size = config["model"]["generator_input_size"]
         self.discriminator_output_filters_num = config["model"]["discriminator_output_filters_num"]
 
